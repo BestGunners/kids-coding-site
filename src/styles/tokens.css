@@ -1,0 +1,94 @@
+/**
+ * 设计变量：科技感 + 学术感 + 教育感
+ * 主色为白 + 深蓝 + 科技蓝，仅用极小面积的青色做点缀。
+ */
+:root {
+  /* 中性色（墨蓝系，用于文字与深色区块） */
+  --ink-900: #060c1a;
+  --ink-800: #0d1729;
+  --ink-700: #17233c;
+  --ink-600: #26334f;
+  --ink-500: #3f4f6e;
+  --ink-400: #5d6d8c;
+  --ink-300: #8593ac;
+  --ink-200: #aab5c7;
+
+  /* 面与线 */
+  --surface: #ffffff;
+  --surface-soft: #f7f9fd;
+  --surface-muted: #eef2f9;
+  --line: #e4eaf4;
+  --line-strong: #ccd7e8;
+
+  /* 品牌蓝 */
+  --brand-700: #10309c;
+  --brand-600: #1b4dff;
+  --brand-500: #3f6cff;
+  --brand-300: #9bb3ff;
+  --brand-100: #dfe7ff;
+  --brand-050: #eef3ff;
+
+  /* 科技点缀色（克制使用） */
+  --cyan-600: #0a90b4;
+  --cyan-500: #0fb0d4;
+  --cyan-050: #e8f8fc;
+
+  /* 功能色 */
+  --positive-600: #10704f;
+  --positive-500: #16a06f;
+  --positive-050: #e9f8f1;
+  --warn-600: #a35a0b;
+  --warn-500: #d9871a;
+  --warn-050: #fdf3e4;
+
+  /* 字体 */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'HarmonyOS Sans SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Source Han Sans SC', 'Noto Sans SC', 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'SFMono-Regular', ui-monospace, Menlo, Consolas, 'JetBrains Mono', 'Roboto Mono',
+    'Courier New', monospace;
+
+  /* 圆角 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* 阴影（低饱和、层次克制） */
+  --shadow-xs: 0 1px 2px rgba(13, 23, 41, 0.05);
+  --shadow-sm: 0 2px 10px rgba(13, 23, 41, 0.06);
+  --shadow-md: 0 12px 30px -12px rgba(13, 23, 41, 0.18);
+  --shadow-lg: 0 28px 60px -24px rgba(13, 23, 41, 0.28);
+
+  /* 布局 */
+  --container: 1140px;
+  --container-narrow: 860px;
+  --gutter: 20px;
+  --section-y: 64px;
+
+  /* 动效 */
+  --ease-out: cubic-bezier(0.22, 0.68, 0.24, 1);
+  --ease-in-out: cubic-bezier(0.5, 0.05, 0.3, 1);
+  --dur-fast: 160ms;
+  --dur: 260ms;
+  --dur-slow: 620ms;
+
+  /* 移动端底部安全区 */
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+}
+
+@media (min-width: 720px) {
+  :root {
+    --gutter: 28px;
+    --section-y: 88px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 40px;
+    --section-y: 112px;
+  }
+}

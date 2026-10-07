@@ -1,0 +1,65 @@
+/* 全局补充样式：跨区块复用的细节与打印（海报导出）规则 */
+
+html {
+  scroll-padding-top: 84px;
+}
+
+.page {
+  min-height: 60vh;
+}
+
+/* 移动端底部操作条预留空间 */
+@media (max-width: 899px) {
+  .page--home {
+    padding-bottom: 76px;
+  }
+}
+
+/* 深色区块中的文字链接 */
+.section--dark .text-link,
+.cta .text-link {
+  color: #a9c0ff;
+}
+
+/* 海报预览与导出 */
+.poster-page {
+  padding-block: 28px 72px;
+}
+
+.poster-page__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .mobile-bar,
+  .back-to-top,
+  .poster-page__toolbar,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .poster-stage {
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  .poster {
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+
+  @page {
+    margin: 8mm;
+  }
+}
