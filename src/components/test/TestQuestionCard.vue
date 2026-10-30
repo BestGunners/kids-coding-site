@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { ArrowLeft, ArrowRight, Check, RotateCcw } from 'lucide-vue-next'
 import type { TestItem } from '@/data/abilityTest'
+import GridScene from '@/components/test/GridScene.vue'
 
 const props = defineProps<{
   item: TestItem
@@ -68,9 +69,11 @@ function toneFor(label: string): string {
       </span>
     </div>
 
+    <GridScene v-if="item.grid" :scene="item.grid" />
+
     <!-- 单选题 -->
     <ul v-if="item.type === 'choice'" class="q__options">
-      <li v-for="(option, optionIndex) in item.options" :key="option.label">
+      <li v-for="(option, optionIndex) in item.options" :key="optionIndex">
         <button
           type="button"
           class="q__option"
