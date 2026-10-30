@@ -4,7 +4,7 @@ import CountUpValue from '@/components/common/CountUpValue.vue'
 const stats = [
   { value: 8, suffix: ' 个', label: '成长阶段', note: '从兴趣启蒙到信息学竞赛' },
   { value: 3, suffix: ' 条', label: '发展路线', note: '兴趣 / 能力 / 竞赛' },
-  { value: 6, suffix: ' 道题', label: '快速测评', note: '约 1 分钟，家长代填即可' },
+  { value: 15, suffix: ' 道题', label: '能力测评', note: '约 6～8 分钟，孩子动手做' },
   { value: 60, suffix: ' 分钟', label: '体验课', note: '无需任何编程基础' },
 ]
 </script>

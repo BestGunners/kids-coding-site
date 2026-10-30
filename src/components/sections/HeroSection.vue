@@ -2,7 +2,7 @@
 import { ArrowDown, ArrowRight, Sparkles } from 'lucide-vue-next'
 import CodeWindow from '@/components/common/CodeWindow.vue'
 
-const emit = defineEmits<{ (event: 'quiz'): void; (event: 'roadmap'): void }>()
+const emit = defineEmits<{ (event: 'roadmap'): void }>()
 
 const heroCode = `int ans = 0;
 for (int i = 1; i <= 100; i++)
@@ -32,17 +32,17 @@ const chips = [
         </p>
 
         <div class="hero__actions btn-row" v-reveal="{ delay: 180 }">
-          <button type="button" class="btn btn--brand" @click="emit('quiz')">
-            测一测孩子适不适合学编程
+          <RouterLink class="btn btn--brand" to="/test">
+            开始 15 题能力测评
             <ArrowRight :size="18" />
-          </button>
+          </RouterLink>
           <button type="button" class="btn btn--ghost" @click="emit('roadmap')">
             了解编程学习路线
           </button>
         </div>
 
         <ul class="hero__notes" v-reveal="{ delay: 240 }">
-          <li><Sparkles :size="16" />6 道题，约 1 分钟，不影响报名</li>
+          <li><Sparkles :size="16" />15 道题，约 6～8 分钟</li>
           <li><Sparkles :size="16" />适合 6～15 岁，有无基础都可以</li>
           <li><Sparkles :size="16" />结果给出方向建议，而不是给孩子贴标签</li>
         </ul>

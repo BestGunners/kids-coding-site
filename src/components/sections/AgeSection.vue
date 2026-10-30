@@ -7,7 +7,7 @@ import { ageConclusion, ageStages } from '@/data/ages'
   <section id="age" class="section section--soft">
     <div class="container">
       <div class="section-head" v-reveal="{ variant: 'fade' }">
-        <p class="eyebrow">06 · 年龄与起点</p>
+        <p class="eyebrow">05 · 年龄与起点</p>
         <h2 class="section-title">孩子什么时候适合开始学编程？</h2>
         <p class="section-lead">
           不建议简单地说“越早越好”。不同年龄的孩子，认知水平和注意力时长差别很大，

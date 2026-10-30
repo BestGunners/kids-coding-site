@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import HeroSection from '@/components/sections/HeroSection.vue'
 import StatsStrip from '@/components/sections/StatsStrip.vue'
 import BridgeSection from '@/components/sections/BridgeSection.vue'
@@ -14,6 +15,7 @@ import MobileCtaBar from '@/components/layout/MobileCtaBar.vue'
 import BookingDialog from '@/components/common/BookingDialog.vue'
 import { scrollToSection } from '@/utils/dom'
 
+const router = useRouter()
 const bookingOpen = ref(false)
 const fromQuiz = ref(false)
 
@@ -22,8 +24,8 @@ function openBooking(isFromQuiz: boolean): void {
   bookingOpen.value = true
 }
 
-function goQuiz(): void {
-  scrollToSection('quiz')
+function goTest(): void {
+  void router.push('/test')
 }
 
 function goRoadmap(): void {
@@ -33,18 +35,18 @@ function goRoadmap(): void {
 
 <template>
   <div class="page page--home">
-    <HeroSection @quiz="goQuiz" @roadmap="goRoadmap" />
+    <HeroSection @roadmap="goRoadmap" />
     <StatsStrip />
     <BridgeSection />
     <CaseSection />
-    <QuizSection @book="openBooking(true)" />
     <AbilitySection />
     <RoadmapSection />
     <AgeSection />
+    <QuizSection @book="openBooking(true)" />
     <FaqSection @contact="openBooking(false)" />
-    <CtaSection @book="openBooking(false)" @quiz="goQuiz" />
+    <CtaSection @book="openBooking(false)" />
 
-    <MobileCtaBar @quiz="goQuiz" @book="openBooking(false)" />
+    <MobileCtaBar @test="goTest" @book="openBooking(false)" />
     <BookingDialog :open="bookingOpen" :from-quiz="fromQuiz" @close="bookingOpen = false" />
   </div>
 </template>

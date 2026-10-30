@@ -22,7 +22,7 @@ function select(stageId: string, clickable?: boolean): void {
   <section id="roadmap" class="section">
     <div class="container">
       <div class="section-head" v-reveal="{ variant: 'fade' }">
-        <p class="eyebrow">05 · 成长路线</p>
+        <p class="eyebrow">04 · 成长路线</p>
         <h2 class="section-title">孩子学编程，可以走多远？</h2>
         <p class="section-lead">
           从兴趣启蒙到信息学竞赛，是一条可以持续很多年的路径。但请记住：

@@ -9,9 +9,9 @@ const emit = defineEmits<{ (event: 'book'): void }>()
     <div class="quiz-section__bg" aria-hidden="true" />
     <div class="container quiz-section__inner">
       <div class="section-head section-head--center" v-reveal="{ variant: 'fade' }">
-        <p class="eyebrow">04 · 能力测评</p>
+        <p class="eyebrow">06 · 1 分钟快测</p>
         <h2 class="section-title">你的孩子适合学编程吗？</h2>
-        <p class="section-lead">用 6 个问题，快速了解孩子的编程潜力。测试约 1 分钟，由家长代填即可。</p>
+        <p class="section-lead">6 道题，约 1 分钟，家长代填即可。</p>
       </div>
 
       <div class="quiz-section__card" v-reveal="{ delay: 80 }">

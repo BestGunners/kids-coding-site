@@ -53,9 +53,6 @@ async function goAnchor(id: string): Promise<void> {
   window.setTimeout(() => scrollToSection(id), 60)
 }
 
-async function goQuiz(): Promise<void> {
-  await goAnchor('quiz')
-}
 </script>
 
 <template>
@@ -90,9 +87,7 @@ async function goQuiz(): Promise<void> {
       </nav>
 
       <div class="site-header__actions">
-        <button type="button" class="btn btn--brand btn--sm header-cta" @click="goQuiz">
-          测一测孩子适不适合
-        </button>
+        <RouterLink class="btn btn--brand btn--sm header-cta" to="/test">开始能力测评</RouterLink>
         <button
           type="button"
           class="menu-toggle"
@@ -129,9 +124,7 @@ async function goQuiz(): Promise<void> {
             </li>
           </ul>
           <div class="menu-panel__actions">
-            <button type="button" class="btn btn--brand btn--block" @click="goQuiz">
-              测一测孩子适不适合学编程
-            </button>
+            <RouterLink class="btn btn--brand btn--block" to="/test">开始 15 题能力测评</RouterLink>
             <button type="button" class="btn btn--ghost btn--block" @click="goAnchor('cta')">
               <MessageCircle :size="18" />
               预约编程体验课

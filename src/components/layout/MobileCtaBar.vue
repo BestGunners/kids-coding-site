@@ -3,7 +3,7 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { CalendarCheck, ClipboardCheck } from 'lucide-vue-next'
 
 const emit = defineEmits<{
-  (event: 'quiz'): void
+  (event: 'test'): void
   (event: 'book'): void
 }>()
 
@@ -24,9 +24,9 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 <template>
   <Transition name="bar">
     <div v-if="visible" class="mobile-bar">
-      <button type="button" class="mobile-bar__btn mobile-bar__btn--ghost" @click="emit('quiz')">
+      <button type="button" class="mobile-bar__btn mobile-bar__btn--ghost" @click="emit('test')">
         <ClipboardCheck :size="18" />
-        测一测
+        能力测评
       </button>
       <button type="button" class="mobile-bar__btn mobile-bar__btn--brand" @click="emit('book')">
         <CalendarCheck :size="18" />

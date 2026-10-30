@@ -21,10 +21,10 @@ export interface NavItem {
 export const homeNav: NavItem[] = [
   { id: 'bridge', label: '奥数 × 编程', primary: true },
   { id: 'case', label: '案例演示', primary: true },
-  { id: 'quiz', label: '能力测评', primary: true },
   { id: 'ability', label: '学什么' },
   { id: 'roadmap', label: '成长路线', primary: true },
   { id: 'age', label: '什么时候开始' },
+  { id: 'quiz', label: '1 分钟快测' },
   { id: 'faq', label: '家长问答', primary: true },
 ]
 
