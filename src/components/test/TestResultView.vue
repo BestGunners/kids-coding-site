@@ -35,9 +35,9 @@ function levelOf(score: number): 'high' | 'mid' | 'low' {
 }
 
 const nextSteps = computed(() => [
-  '把这份结果发给编程老师，让老师先了解孩子的情况',
-  '预约一次 60 分钟体验课，让孩子亲手写第一段程序',
-  '课后和老师一起看：孩子是更喜欢“做出作品”，还是更喜欢“想解法”',
+  '把结果发给老师，让老师先了解孩子的情况',
+  '预约一次 60 分钟体验课',
+  '课后和老师一起看：孩子更喜欢“做作品”还是“想解法”',
 ])
 
 const summaryText = computed(() => {
@@ -59,8 +59,7 @@ const summaryText = computed(() => {
       <span class="report__kicker"><Sparkles :size="13" />编程思维画像</span>
       <h2 class="report__title">孩子在这 6 个方面的表现</h2>
       <p class="report__lead">
-        这份结果不会给孩子打分排名，只用来看“哪种学习方式更合他”。综合参考分
-        <b class="mono">{{ report.overall }}</b> / 100。
+        综合参考分 <b class="mono">{{ report.overall }}</b> / 100，仅作学习方向参考。
       </p>
     </header>
 
@@ -84,18 +83,13 @@ const summaryText = computed(() => {
       <h3><TrendingUp :size="18" />相对突出的方面</h3>
       <p>
         {{ report.strongest.map((item) => item.name).join('、') }}
-        —— 这几个方向是孩子比较自然的入口，后续学习可以先从这里找成就感。
+        —— 这几个方向是孩子比较自然的入口。
       </p>
     </section>
 
     <section class="behavior">
       <h3><ClipboardCheck :size="18" />答题状态观察</h3>
       <p>{{ report.behaviorNote }}</p>
-      <p class="behavior__meta">
-        本次共 {{ report.dimensions.length }} 个维度 · 总用时
-        {{ Math.max(1, Math.round(report.totalElapsedMs / 60000)) }} 分钟 ·
-        修改答案 {{ report.changedCount }} 次
-      </p>
     </section>
 
     <section class="start">
@@ -136,8 +130,7 @@ const summaryText = computed(() => {
     </div>
 
     <p class="notice">
-      测评只能反映孩子“当下在这几类任务上的反应”，不能代表智力或学习能力。
-      有些孩子在纸面题目上不显眼，但一动手写程序就特别投入——所以最终建议还是以一次真实体验为准。
+      结果仅作方向参考，最终以一次真实体验为准。
       <button type="button" class="text-link" @click="$emit('book')">
         让孩子试一次
         <ArrowRight :size="14" />

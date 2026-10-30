@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
-import { ClipboardCheck, Clock, Gift, Play, Sparkles } from 'lucide-vue-next'
+import { Play } from 'lucide-vue-next'
 import TestQuestionCard from '@/components/test/TestQuestionCard.vue'
 import TestResultView from '@/components/test/TestResultView.vue'
 import BookingDialog from '@/components/common/BookingDialog.vue'
@@ -129,18 +129,8 @@ function backToIntro(): void {
       <div class="test-hero__bg" aria-hidden="true" />
       <div class="container test-hero__inner">
         <p class="eyebrow">编程能力测评 · 15 题</p>
-        <h1 class="test-hero__title">15 题，看看孩子适合从哪里开始学编程</h1>
-        <p class="test-hero__lead">
-          题目以图形为主，不需要识字、不需要编程基础，也不会出现超纲的数学知识。
-          我们看的不是“会不会做题”，而是孩子遇到问题时的第一反应。
-        </p>
-
-        <ul class="test-hero__meta">
-          <li><ClipboardCheck :size="15" />15 道题</li>
-          <li><Clock :size="15" />约 6～8 分钟</li>
-          <li><Sparkles :size="15" />建议让孩子自己点</li>
-          <li><Gift :size="15" />测完给学习方向建议</li>
-        </ul>
+        <h1 class="test-hero__title">看看孩子适合从哪里开始学编程</h1>
+        <p class="test-hero__lead">15 题，约 6～8 分钟。图形题为主，不需要编程基础。</p>
       </div>
     </section>
 
@@ -148,10 +138,8 @@ function backToIntro(): void {
       <div class="container container--narrow">
         <!-- 开始页 -->
         <div v-if="phase === 'intro'" class="card card--pad intro">
-          <h2 class="intro__title">先选一下孩子的年龄段</h2>
-          <p class="intro__lead">
-            不同年龄的题目不一样：6～8 岁全部是图形题，家长可以读题；8 岁以上会出现推理题。
-          </p>
+          <h2 class="intro__title">选择孩子年龄</h2>
+          <p class="intro__lead">不同年龄题目不同，6～8 岁全部为图形题。</p>
 
           <ul class="ages">
             <li v-for="option in ageOptions" :key="option.id">
@@ -168,16 +156,11 @@ function backToIntro(): void {
             </li>
           </ul>
 
-          <div class="intro__story">
-            <p>答题时不需要提示、不需要讲解，孩子选什么就是什么，这样结果才准。</p>
-            <p>答错不影响任何结果，也不会被记录成“能力评价”，只是帮我们判断更适合从哪里开始。</p>
-          </div>
-
           <button type="button" class="btn btn--brand btn--block" :disabled="!age" @click="start">
             <Play :size="18" />
             开始测试（共 15 题）
           </button>
-          <p class="intro__note">开始后可以随时返回上一题修改答案。</p>
+          <p class="intro__note">可以随时返回上一题修改答案</p>
         </div>
 
         <!-- 答题页 -->

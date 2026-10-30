@@ -4,6 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { Menu, MessageCircle, X } from 'lucide-vue-next'
 import { homeNav, siteConfig, topNav } from '@/data/site'
 import { scrollToSection } from '@/utils/dom'
+import logoUrl from '@/assets/logo-sichuang.png'
 
 const route = useRoute()
 const router = useRouter()
@@ -61,21 +62,16 @@ async function goQuiz(): Promise<void> {
   <header class="site-header" :class="{ 'is-scrolled': scrolled }">
     <div class="container site-header__inner">
       <RouterLink class="brand" to="/" aria-label="返回首页">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 28 28" width="26" height="26">
-            <rect x="1.2" y="1.2" width="25.6" height="25.6" rx="8" fill="none" stroke="currentColor" stroke-width="1.6" />
-            <path d="M9 19V9.6l10 8.4V9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </span>
+        <img class="brand__logo" :src="logoUrl" alt="思创思维" />
         <span class="brand__text">
-          <strong>{{ siteConfig.productName }}</strong>
+          <strong>少儿编程</strong>
           <em>{{ siteConfig.productAlt }}</em>
         </span>
       </RouterLink>
 
       <nav class="nav-desktop" aria-label="页面导航">
         <button
-          v-for="item in homeNav"
+          v-for="item in homeNav.filter((nav) => nav.primary)"
           :key="item.id"
           type="button"
           class="nav-desktop__link"
@@ -180,14 +176,10 @@ async function goQuiz(): Promise<void> {
   gap: 10px;
 }
 
-.brand__mark {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 11px;
-  background: var(--ink-900);
-  color: #fff;
+.brand__logo {
+  display: block;
+  width: auto;
+  height: 36px;
   flex: none;
 }
 

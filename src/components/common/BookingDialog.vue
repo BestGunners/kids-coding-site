@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { CalendarCheck, Check, Copy, Phone, X } from 'lucide-vue-next'
 import { useClipboard } from '@/composables/useClipboard'
 import { siteConfig } from '@/data/site'
+import wecomQr from '@/assets/wecom-qr.png'
 
 const props = defineProps<{
   open: boolean
@@ -98,9 +99,20 @@ onBeforeUnmount(() => {
 
           <div v-if="!submitted" class="dialog__body">
             <p class="dialog__lead">
-              填写后点击“生成预约信息”，系统会整理成一条微信消息，复制后发送给课程老师即可。
-              <strong>信息只保存在你的手机里，不会上传到服务器。</strong>
+              扫码添加老师企业微信，或填写下面的信息生成一条预约消息。
+              <strong>信息不会上传服务器。</strong>
             </p>
+
+            <div class="dialog__wecom">
+              <img :src="wecomQr" alt="思创思维老师企业微信二维码" />
+              <div class="dialog__wecom-text">
+                <b>扫码添加老师企业微信</b>
+                <p>直接预约体验课、咨询课程安排</p>
+                <p class="dialog__wecom-meta">
+                  电话 {{ siteConfig.phone }} · 微信 {{ siteConfig.wechatId }}
+                </p>
+              </div>
+            </div>
 
             <form class="form" @submit.prevent="submit">
               <label class="field">
@@ -311,6 +323,43 @@ onBeforeUnmount(() => {
   color: var(--ink-400);
   font-size: 13px;
   line-height: 1.9;
+}
+
+.dialog__wecom {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+}
+
+.dialog__wecom img {
+  width: 88px;
+  height: 88px;
+  flex: none;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.dialog__wecom-text b {
+  display: block;
+  color: var(--ink-900);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dialog__wecom-text p {
+  margin-top: 4px;
+  color: var(--ink-500);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.dialog__wecom-meta {
+  color: var(--ink-400) !important;
 }
 
 .dialog__alt a {

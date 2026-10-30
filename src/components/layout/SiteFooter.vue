@@ -11,7 +11,8 @@ const route = useRoute()
       <div class="site-footer__brand">
         <strong>{{ siteConfig.productName }}</strong>
         <p>{{ siteConfig.orgNote }}</p>
-        <p class="site-footer__org">{{ siteConfig.orgName }} · {{ siteConfig.address }}</p>
+        <p class="site-footer__org">{{ siteConfig.orgName }}</p>
+        <p class="site-footer__contact">电话 {{ siteConfig.phone }} · 微信 {{ siteConfig.wechatId }}</p>
       </div>
 
       <nav class="site-footer__nav" aria-label="页脚导航">
@@ -55,6 +56,11 @@ const route = useRoute()
 
 .site-footer__org {
   color: #8798b5;
+}
+
+.site-footer__contact {
+  color: #8798b5;
+  font-size: 12.5px;
 }
 
 .site-footer__nav {

@@ -1,36 +1,31 @@
-/** 站点级配置：机构信息均为占位内容，上线前替换即可 */
+/** 站点级配置 */
 export const siteConfig = {
   productName: '少儿编程成长探索',
   productAlt: '数学思维 × 编程能力',
-  orgName: '（机构名称占位）',
+  orgName: '思创思维',
   orgNote: '少儿奥数 · 数学思维 · 物理 · 少儿编程',
-  /** 占位电话 */
-  phone: '000-0000 0000',
-  /** 占位微信号 */
-  wechatId: '（微信号占位）',
-  /** 二维码占位文案 */
-  qrCaption: '微信扫码 · 添加编程课程老师',
-  /** 课程老师姓名占位 */
+  phone: '18716206590',
+  wechatId: '18323687193',
+  qrCaption: '扫码添加老师企业微信',
   teacherName: '编程课程老师',
-  /** 机构地址占位 */
-  address: '（校区地址占位）',
-  /** 体验课信息占位 */
   trialInfo: '体验课 60 分钟 · 需要一台电脑 · 无需编程基础',
 } as const
 
 export interface NavItem {
   id: string
   label: string
+  /** 是否显示在桌面端顶部导航（移动端菜单始终显示全部） */
+  primary?: boolean
 }
 
 export const homeNav: NavItem[] = [
-  { id: 'bridge', label: '奥数 × 编程' },
-  { id: 'case', label: '案例演示' },
-  { id: 'quiz', label: '能力测评' },
+  { id: 'bridge', label: '奥数 × 编程', primary: true },
+  { id: 'case', label: '案例演示', primary: true },
+  { id: 'quiz', label: '能力测评', primary: true },
   { id: 'ability', label: '学什么' },
-  { id: 'roadmap', label: '成长路线' },
+  { id: 'roadmap', label: '成长路线', primary: true },
   { id: 'age', label: '什么时候开始' },
-  { id: 'faq', label: '家长问答' },
+  { id: 'faq', label: '家长问答', primary: true },
 ]
 
 export const topNav = [

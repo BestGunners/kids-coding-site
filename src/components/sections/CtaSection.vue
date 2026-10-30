@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { CalendarCheck, Copy, MessageCircle, Phone, QrCode, Sparkles } from 'lucide-vue-next'
-import QrPlaceholder from '@/components/common/QrPlaceholder.vue'
 import { useClipboard } from '@/composables/useClipboard'
 import { siteConfig } from '@/data/site'
+import wecomQr from '@/assets/wecom-qr.png'
 
 const emit = defineEmits<{
   (event: 'book'): void
@@ -55,8 +55,8 @@ const telHref = `tel:${siteConfig.phone.replace(/[^\d+]/g, '')}`
       </div>
 
       <aside class="contact" v-reveal="{ variant: 'right', delay: 80 }">
-        <p class="contact__title">扫码咨询 · 领取测评</p>
-        <QrPlaceholder :size="150" :caption="siteConfig.qrCaption" :seed="13" />
+        <p class="contact__title">扫码添加老师企业微信</p>
+        <img class="contact__qr" :src="wecomQr" alt="思创思维老师企业微信二维码" />
 
         <ul class="contact__list">
           <li>
@@ -79,7 +79,7 @@ const telHref = `tel:${siteConfig.phone.replace(/[^\d+]/g, '')}`
 
         <p class="contact__hint">
           <MessageCircle :size="14" />
-          二维码为占位图，上线前替换为课程老师的微信二维码即可。
+          长按识别或扫码，添加老师企业微信咨询体验课
         </p>
       </aside>
     </div>
@@ -208,6 +208,14 @@ const telHref = `tel:${siteConfig.phone.replace(/[^\d+]/g, '')}`
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.contact__qr {
+  width: 150px;
+  height: 150px;
+  padding: 6px;
+  border-radius: 12px;
+  background: #fff;
 }
 
 .contact__list {
